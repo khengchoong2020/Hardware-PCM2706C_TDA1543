@@ -5,6 +5,9 @@ Hardware bug error fixes
 4. I2S signal isolator ground not tied to common signal ground which caused no I2S going to audio DAC. Does isolator ground has to tie to common digital ground ?
 5. this 16 bit USB audio DAC uses PCM2706C as source from laptop, with I2S signal generated pass through digital isolator which works as level shifter as well as isolation between PCM2706C to TDA1543. the analog signal from TDA1543 passses to SNE5532 for I/V conversion 
 and multifeeback LPF.
-6. initial thought was to use 4 parallel TDA1543 which would increase SNR by 6dB, the thoery of increasing the DAC by 2 fold would increase SNR by 3dB. One of TDA1543 genearte chopper noise when inserted, suspected to be malfunction. The reolution was to make it 2 X TDA1543.
+6. initial thought was to use 4 parallel TDA1543 which would increase SNR by 6dB, the theory of increasing the DAC by 2 fold would increase SNR by 3dB. One of TDA1543 generate chopper noise when inserted, suspected to be malfunction. The reolution was to make it 2 X TDA1543.
 7. the sound was quiete impressive to my hearing, decent low,impresiive mid vocal, and noticeable high.
 8. will try to fix the hardware bug and try 4 parallel if possible.
+9. Both TDA1543 and opamp NSE5532 generate heats and heatsink are definitely a must. The DAC TDA1543s are biased at 5.5V, 0.5V above 5.0v. Iref resistor is 512R while I/V resistor is 543R, and the smoothing capacitor is 0.1nF (will change to 1nF or 3.3V)
+10. Audio gain has to be investigated as i have to reduce foobar2k to almost 90dB and almost 20% of audio gain in linux machine.
+11. Play tone file with no noticeable clipping when audio gain adjusted
