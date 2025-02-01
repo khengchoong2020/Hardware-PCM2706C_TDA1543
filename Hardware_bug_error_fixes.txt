@@ -1,0 +1,10 @@
+Hardware bug error fixes
+1. Full wave bridge IC PCB part pin error, pin 2 and pin 4 swapped. lesson learned - must check pin during part import.
+2. 18V to 12V 1A LDO regulator for analog opamp IC pin swapped.  lesson learned - must check pin during part import.
+3. Separate ground for power plane and signal ground plane. From the sound does not seem to give any difference, will check with rightmark audio analyzer to check for signal to noise ratio. Does this ground separation yield a audio performance difference.
+4. I2S signal isolator ground not tied to common signal ground which caused no I2S going to audio DAC. Does isolator ground has to tie to common digital ground ?
+5. this 16 bit USB audio DAC uses PCM2706C as source from laptop, with I2S signal generated pass through digital isolator which works as level shifter as well as isolation between PCM2706C to TDA1543. the analog signal from TDA1543 passses to SNE5532 for I/V conversion 
+and multifeeback LPF.
+6. initial thought was to use 4 parallel TDA1543 which would increase SNR by 6dB, the thoery of increasing the DAC by 2 fold would increase SNR by 3dB. One of TDA1543 genearte chopper noise when inserted, suspected to be malfunction. The reolution was to make it 2 X TDA1543.
+7. the sound was quiete impressive to my hearing, decent low,impresiive mid vocal, and noticeable high.
+8. will try to fix the hardware bug and try 4 parallel if possible.
